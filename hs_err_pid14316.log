@@ -1,0 +1,165 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=14316, tid=0x0000000000002f64
+#
+# JRE version:  (8.0_231-b11) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.231-b11 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000032be000):  JavaThread "Unknown thread" [_thread_in_vm, id=12132, stack(0x0000000003130000,0x0000000003230000)]
+
+Stack: [0x0000000003130000,0x0000000003230000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000032be000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=12132, stack(0x0000000003130000,0x0000000003230000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000083200000, size: 1998 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 37888K, used 655K [0x00000000d6600000, 0x00000000d9000000, 0x0000000100000000)
+  eden space 32768K, 2% used [0x00000000d6600000,0x00000000d66a3d80,0x00000000d8600000)
+  from space 5120K, 0% used [0x00000000d8b00000,0x00000000d8b00000,0x00000000d9000000)
+  to   space 5120K, 0% used [0x00000000d8600000,0x00000000d8600000,0x00000000d8b00000)
+ ParOldGen       total 86016K, used 0K [0x0000000083200000, 0x0000000088600000, 0x00000000d6600000)
+  object space 86016K, 0% used [0x0000000083200000,0x0000000083200000,0x0000000088600000)
+ Metaspace       used 752K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000012780000,0x0000000012b70000] byte_map_base: 0x0000000012367000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000067bb6d90
+ Begin Bits: [0x0000000013810000, 0x0000000015748000)
+ End Bits:   [0x0000000015748000, 0x0000000017680000)
+
+Polling page: 0x0000000000be0000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x00000000033c0000, 0x0000000003630000, 0x00000000123c0000]
+ total_blobs=58 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.019 loading class java/lang/Short
+Event: 0.019 loading class java/lang/Short done
+Event: 0.019 loading class java/lang/Integer
+Event: 0.019 loading class java/lang/Integer done
+Event: 0.019 loading class java/lang/Long
+Event: 0.019 loading class java/lang/Long done
+Event: 0.020 loading class java/lang/NullPointerException
+Event: 0.020 loading class java/lang/NullPointerException done
+Event: 0.020 loading class java/lang/ArithmeticException
+Event: 0.020 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff609330000 - 0x00007ff609367000 	C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe
+0x00007ffac0160000 - 0x00007ffac0350000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffabe5c0000 - 0x00007ffabe672000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffabdf00000 - 0x00007ffabe1a3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffabed70000 - 0x00007ffabee13000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffabe490000 - 0x00007ffabe52e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffabe7d0000 - 0x00007ffabe867000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffabf530000 - 0x00007ffabf650000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffabe2e0000 - 0x00007ffabe474000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffabdce0000 - 0x00007ffabdd01000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffabf440000 - 0x00007ffabf466000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffabdb40000 - 0x00007ffabdcd4000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffabd2f0000 - 0x00007ffabd38e000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffabd0f0000 - 0x00007ffabd1ea000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffa9d690000 - 0x00007ffa9d915000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.778_none_e6c6b761130d4fb8\COMCTL32.dll
+0x00007ffabe950000 - 0x00007ffabec86000 	C:\WINDOWS\System32\combase.dll
+0x00007ffabdd30000 - 0x00007ffabddb0000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffabe530000 - 0x00007ffabe55e000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000067c40000 - 0x0000000067d12000 	C:\Program Files\Java\jre1.8.0_231\bin\msvcr100.dll
+0x0000000067390000 - 0x0000000067c36000 	C:\Program Files\Java\jre1.8.0_231\bin\server\jvm.dll
+0x00007ffabe480000 - 0x00007ffabe488000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffaa8de0000 - 0x00007ffaa8de9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffabab40000 - 0x00007ffabab64000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffab6940000 - 0x00007ffab694a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffabfd40000 - 0x00007ffabfdaf000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffabab10000 - 0x00007ffabab3d000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x00007ffabd1f0000 - 0x00007ffabd23a000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ffa9f090000 - 0x00007ffa9f09f000 	C:\Program Files\Java\jre1.8.0_231\bin\verify.dll
+0x00007ffa95240000 - 0x00007ffa95269000 	C:\Program Files\Java\jre1.8.0_231\bin\java.dll
+0x00007ffa99d70000 - 0x00007ffa99d86000 	C:\Program Files\Java\jre1.8.0_231\bin\zip.dll
+
+VM Arguments:
+java_command: <unknown>
+java_class_path (initial): .;D:\Java\lib;D:\Java\lib\tools.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\Java
+CLASSPATH=.;D:\Java\lib;D:\Java\lib\tools.jar
+PATH=D:\FYP\Code\venv\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;"D:\Java\bin;D:\Java\jre\bin";D:\Python\Python compiler\Scripts\;D:\Python\Python compiler\;C:\Users\49503\AppData\Local\Microsoft\WindowsApps;D:\visual studio code\Microsoft VS Code\bin;D:\Python\PyCharm 2019.3.2\bin;;D:\WebStorm\WebStorm 2019.3.3\bin;;D:\Anaconda\Scripts;
+USERNAME=49503
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.778)
+
+CPU:total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 158 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8177948k(476840k free), swap 21731352k(5148k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.231-b11) for windows-amd64 JRE (1.8.0_231-b11), built on Oct  5 2019 03:11:30 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Apr 21 11:40:52 2020
+timezone: 中国标准时间
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

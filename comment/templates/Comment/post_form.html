@@ -1,0 +1,24 @@
+{% extends "Comment/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content-title %}
+     <li><a href="{% url 'Comment-Page' %}" class="active"><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+     <!--<li><a href="{% url 'Comment-About' %}" class=""><i class="lnr lnr-bubble"></i> <span>Comment</span></a></li>-->
+{% endblock %}
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Create New Article
+                <h6>Unleash your inspiration</h6>
+                </legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Post</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

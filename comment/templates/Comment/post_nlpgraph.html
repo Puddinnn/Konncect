@@ -1,0 +1,19 @@
+{% extends "Comment/base.html" %}
+
+ {% block content-title %}
+     <li><a href="{% url 'Comment-Page' %}" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+     <!--<li><a href="{% url 'Comment-About' %}" class=""><i class="lnr lnr-bubble"></i> <span>Comment</span></a></li>-->
+ {% endblock %}
+
+{% block content %}
+    <br>
+     <article class="media content-section">
+            <div style="text-align: center">
+                <a type="button" class="btn btn-primary" href="javascript:history.go(-1)">View Article</a>
+            </div>
+
+        </div>
+
+     </article>
+
+{% endblock content %}

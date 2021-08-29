@@ -1,0 +1,29 @@
+{% extends "Comment/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content-title %}
+     <li><a href="#" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+ {% endblock %}
+
+{% block content %}
+    <br>
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Us
+                <h6>After Sign up, please log into your account to check if the account is created successfully</h6>
+                </legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign up</button>
+            </div>
+        </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign in</a>
+        </small>
+    </div>
+    </div>
+{% endblock content %}

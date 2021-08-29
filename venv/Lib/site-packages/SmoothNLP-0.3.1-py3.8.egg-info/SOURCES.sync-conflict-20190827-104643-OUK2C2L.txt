@@ -1,0 +1,10 @@
+README.md
+setup.py
+SmoothNLP.egg-info/PKG-INFO
+SmoothNLP.egg-info/SOURCES.txt
+SmoothNLP.egg-info/dependency_links.txt
+SmoothNLP.egg-info/requires.txt
+SmoothNLP.egg-info/top_level.txt
+smoothnlp/__init__.py
+smoothnlp/jvm/__init__.py
+smoothnlp/jvm/static.py

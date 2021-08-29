@@ -1,0 +1,43 @@
+{% extends "Comment/base.html" %}
+
+ {% block content-title %}
+     <li><a href="{% url 'Comment-Page' %}" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
+     <!--<li><a href="{% url 'Comment-About' %}" class=""><i class="lnr lnr-bubble"></i> <span>Comment</span></a></li>-->
+ {% endblock %}
+
+{% block content %}
+    <br>
+     <article class="media content-section">
+        <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+                <small class="text-muted">{{ object.date_posted | date:"M d, Y" }}</small>
+                {% if object.author == user %}
+                    <div>
+                        <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id%}">Update</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id%}">Delete</a>
+                    </div>
+                {% endif %}
+            </div>
+            <h2 class="article-title">{{ object.title }}</h2>
+            <p class="article-content">{{ object.content }}</p>
+            <HR width="80%" color=#987cb9 SIZE=1>
+            <script>
+                function ChangeButtonStyle1() {
+                    document.getElementById("id1").innerHTML="<i class=\"fa fa-spinner fa-spin\"></i> Loading...";
+                }
+                function ChangeButtonStyle2() {
+                    document.getElementById("id2").innerHTML="<i class=\"fa fa-spinner fa-spin\"></i> Generating...";
+                }
+            </script>
+            <div style="text-align: center">
+                <a id="id1" onclick="ChangeButtonStyle1()" type="button" class="btn btn-primary" href="{% url 'post-nlp' object.id %}" >View Knowledge Extraction</a>
+                <a id="id2" onclick="ChangeButtonStyle2()" type="button" class="btn btn-info" href="{% url 'post-nlpgraph' object.id %}">View the parse tree</a>
+            </div>
+
+        </div>
+
+     </article>
+
+{% endblock content %}

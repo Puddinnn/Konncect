@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+readme.rst
+setup.py
+SmoothNLP.egg-info/PKG-INFO
+SmoothNLP.egg-info/SOURCES.txt
+SmoothNLP.egg-info/dependency_links.txt
+SmoothNLP.egg-info/requires.txt
+SmoothNLP.egg-info/top_level.txt
+smoothnlp/__init__.py
+smoothnlp/pipeline.py
+smoothnlp/server.py
+smoothnlp/algorithm/__init__.py
+smoothnlp/algorithm/phrase/__init__.py
+smoothnlp/algorithm/phrase/ngram_utils.py
+smoothnlp/algorithm/phrase/phrase_extraction.py
+smoothnlp/static/__init__.py
